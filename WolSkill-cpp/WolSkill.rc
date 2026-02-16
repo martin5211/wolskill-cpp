@@ -1,0 +1,48 @@
+#include <winresrc.h>
+#include "resource.h"
+
+// Icon resources
+IDI_WOLSKILL   ICON "WolSkill.ico"
+
+// Version info
+VS_VERSION_INFO VERSIONINFO
+FILEVERSION     1,0,0,0
+PRODUCTVERSION  1,0,0,0
+FILEFLAGSMASK   VS_FFI_FILEFLAGSMASK
+FILEFLAGS       0x0L
+FILEOS          VOS_NT_WINDOWS32
+FILETYPE        VFT_APP
+FILESUBTYPE     VFT2_UNKNOWN
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "CompanyName",      "WolSkill-cpp"
+            VALUE "FileDescription",  "WolSkill-cpp Background Service"
+            VALUE "FileVersion",      "1.0.0.0"
+            VALUE "InternalName",     "WolSkill-cpp.exe"
+            VALUE "OriginalFilename", "WolSkill-cpp.exe"
+            VALUE "ProductName",      "WolSkill-cpp"
+            VALUE "ProductVersion",   "1.0.0.0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x0409, 1200
+    END
+END
+
+// Settings dialog
+IDD_SETTINGS DIALOGEX 0, 0, 260, 120
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "WolSkill-cpp Settings"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LTEXT           "AWS Instance ID:", IDC_STATIC_AWSID, 12, 14, 70, 10
+    EDITTEXT        IDC_EDIT_AWSID, 86, 12, 160, 14, ES_AUTOHSCROLL
+    LTEXT           "License:", IDC_STATIC_LICENSE, 12, 38, 70, 10
+    EDITTEXT        IDC_EDIT_LICENSE, 86, 36, 160, 14, ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK", IDC_BTN_OK, 140, 94, 50, 14
+    PUSHBUTTON      "Cancel", IDC_BTN_CANCEL, 196, 94, 50, 14
+END

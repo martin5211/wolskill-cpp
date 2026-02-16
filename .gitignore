@@ -1,0 +1,44 @@
+# Build outputs
+bin/
+obj/
+x64/
+x86/
+Debug/
+Release/
+.claude/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.ncb
+*.sdf
+*.opensdf
+*.db
+*.opendb
+*.VC.db
+*.ipch
+*.pch
+*.pdb
+*.ilk
+*.exp
+*.obj
+*.lib
+*.exe
+*.dll
+*.log
+*.tlog
+
+# MSIX
+AppPackages/
+BundleArtifacts/
+*.appx
+*.msix
+*.appxbundle
+*.msixbundle
+*.appxupload
+*.msixupload
+
+# Temp
+*.tmp
+~$*
