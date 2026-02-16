@@ -1,6 +1,6 @@
 # WolSkill-cpp
 
-A native Win32 system tray application that maintains a persistent WebSocket connection to an AWS backend for Wake-on-LAN license management. It sends periodic heartbeats and MAC address data, and can receive remote shutdown commands. This is a C++ port of [wolskill-cmd](https://github.com/oscarpenelo/wolskill-cmd). A license can be obtained from [https://www.wolskill.com/](https://www.wolskill.com/).
+A native Win32 system tray application that maintains a persistent WebSocket connection to an AWS backend for Wake-on-LAN using Alexa. It sends periodic heartbeats and MAC address data, so it can receive remote shutdown commands. This is a C++ port of [wolskill-cmd](https://github.com/oscarpenelo/wolskill-cmd). A license can be obtained from [https://www.wolskill.com/](https://www.wolskill.com/).
 
 ## Features
 
