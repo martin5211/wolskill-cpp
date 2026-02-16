@@ -31,7 +31,7 @@
 
   <Applications>
     <Application Id="App"
-      Executable="WolSkill-cpp\WolSkill-cpp.exe"
+      Executable="WolSkill-cpp.exe"
       EntryPoint="Windows.FullTrustApplication">
       <uap:VisualElements
         DisplayName="WolSkill-cpp"
@@ -43,7 +43,7 @@
         <uap:SplashScreen Image="Images\SplashScreen.png" />
       </uap:VisualElements>
       <Extensions>
-        <desktop:Extension Category="windows.startupTask" Executable="WolSkill-cpp\WolSkill-cpp.exe" EntryPoint="Windows.FullTrustApplication">
+        <desktop:Extension Category="windows.startupTask" Executable="WolSkill-cpp.exe" EntryPoint="Windows.FullTrustApplication">
           <desktop:StartupTask TaskId="WolSkillStartup" Enabled="true" DisplayName="WolSkill-cpp"/>
         </desktop:Extension>
       </Extensions>

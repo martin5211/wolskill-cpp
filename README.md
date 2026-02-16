@@ -31,7 +31,7 @@ msbuild WolSkill-cpp\WolSkill-cpp.vcxproj -p:Configuration=Release -p:Platform=x
 
 The output is placed in `bin\Release\x64\WolSkill-cpp.exe`.
 
-To build the MSIX package, build the **WolSkillPackage** project instead.
+To build the MSIX package, right-click the project in Visual Studio and select **Publish** > **Create App Packages**.
 
 ## Usage
 
@@ -58,8 +58,6 @@ WolSkill-cpp/
   WolSkill.rc                       Dialog template, version info, icon resource
   WolSkill.ico                      Application icon
   app.manifest                      DPI awareness, common controls v6
-WolSkillPackage/
-  WolSkillPackage.wapproj           MSIX packaging project
   Package.appxmanifest              Package identity, startup task, capabilities
   Images/                           Store and tile logo assets
 ```
