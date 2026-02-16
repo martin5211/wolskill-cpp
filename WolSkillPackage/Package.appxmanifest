@@ -8,15 +8,15 @@
   IgnorableNamespaces="uap mp rescap desktop">
 
   <Identity
-    Name="WolSkill"
-    Publisher="CN=WolSkill"
+    Name="WolSkill-cpp"
+    Publisher="CN=WolSkill-cpp"
     Version="1.0.0.0" />
 
   <mp:PhoneIdentity PhoneProductId="a1b2c3d4-e5f6-7890-abcd-ef1234567890" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
-    <DisplayName>WolSkill</DisplayName>
-    <PublisherDisplayName>WolSkill</PublisherDisplayName>
+    <DisplayName>WolSkill-cpp</DisplayName>
+    <PublisherDisplayName>WolSkill-cpp</PublisherDisplayName>
     <Logo>Images\StoreLogo.png</Logo>
   </Properties>
 
@@ -31,11 +31,11 @@
 
   <Applications>
     <Application Id="App"
-      Executable="WolSkill\WolSkill.exe"
+      Executable="WolSkill-cpp\WolSkill-cpp.exe"
       EntryPoint="Windows.FullTrustApplication">
       <uap:VisualElements
-        DisplayName="WolSkill"
-        Description="WolSkill Background Service"
+        DisplayName="WolSkill-cpp"
+        Description="WolSkill-cpp Background Service"
         BackgroundColor="transparent"
         Square150x150Logo="Images\Square150x150Logo.png"
         Square44x44Logo="Images\Square44x44Logo.png">
@@ -43,8 +43,8 @@
         <uap:SplashScreen Image="Images\SplashScreen.png" />
       </uap:VisualElements>
       <Extensions>
-        <desktop:Extension Category="windows.startupTask" Executable="WolSkill\WolSkill.exe" EntryPoint="Windows.FullTrustApplication">
-          <desktop:StartupTask TaskId="WolSkillStartup" Enabled="true" DisplayName="WolSkill"/>
+        <desktop:Extension Category="windows.startupTask" Executable="WolSkill-cpp\WolSkill-cpp.exe" EntryPoint="Windows.FullTrustApplication">
+          <desktop:StartupTask TaskId="WolSkillStartup" Enabled="true" DisplayName="WolSkill-cpp"/>
         </desktop:Extension>
       </Extensions>
     </Application>
