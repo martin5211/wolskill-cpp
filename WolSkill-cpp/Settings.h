@@ -8,8 +8,7 @@ public:
     static constexpr const wchar_t* REG_VAL_AWSID = L"AwsId";
     static constexpr const wchar_t* REG_VAL_LICENSE = L"License";
 
-    static constexpr const wchar_t* RUN_KEY = L"SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run";
-    static constexpr const wchar_t* RUN_VAL = L"WolSkill";
+    static constexpr const wchar_t* STARTUP_TASK_ID = L"WolSkillStartup";
 
     std::wstring awsId;
     std::wstring license;

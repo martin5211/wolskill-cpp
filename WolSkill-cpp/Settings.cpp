@@ -1,4 +1,6 @@
 #include "Settings.h"
+#include <winrt/Windows.Foundation.h>
+#include <winrt/Windows.ApplicationModel.h>
 
 bool Settings::Load() {
     HKEY hKey;
@@ -48,29 +50,22 @@ bool Settings::IsValid() const {
 }
 
 bool Settings::IsRunOnStartup() {
-    HKEY hKey;
-    if (RegOpenKeyExW(HKEY_CURRENT_USER, RUN_KEY, 0, KEY_READ, &hKey) != ERROR_SUCCESS)
+    try {
+        auto task = winrt::Windows::ApplicationModel::StartupTask::GetAsync(STARTUP_TASK_ID).get();
+        return task.State() == winrt::Windows::ApplicationModel::StartupTaskState::Enabled;
+    } catch (...) {
         return false;
-
-    bool exists = RegQueryValueExW(hKey, RUN_VAL, nullptr, nullptr, nullptr, nullptr) == ERROR_SUCCESS;
-    RegCloseKey(hKey);
-    return exists;
+    }
 }
 
 void Settings::SetRunOnStartup(bool enable) {
-    HKEY hKey;
-    if (RegOpenKeyExW(HKEY_CURRENT_USER, RUN_KEY, 0, KEY_WRITE, &hKey) != ERROR_SUCCESS)
-        return;
-
-    if (enable) {
-        wchar_t exePath[MAX_PATH]{};
-        GetModuleFileNameW(nullptr, exePath, MAX_PATH);
-        RegSetValueExW(hKey, RUN_VAL, 0, REG_SZ,
-            reinterpret_cast<const BYTE*>(exePath),
-            static_cast<DWORD>((wcslen(exePath) + 1) * sizeof(wchar_t)));
-    } else {
-        RegDeleteValueW(hKey, RUN_VAL);
+    try {
+        auto task = winrt::Windows::ApplicationModel::StartupTask::GetAsync(STARTUP_TASK_ID).get();
+        if (enable) {
+            task.RequestEnableAsync().get();
+        } else {
+            task.Disable();
+        }
+    } catch (...) {
     }
-
-    RegCloseKey(hKey);
 }

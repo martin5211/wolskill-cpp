@@ -8,6 +8,7 @@
 #include "WebSocketClient.h"
 #include "NetworkInfo.h"
 #include "ThemeHelper.h"
+#include <winrt/Windows.Foundation.h>
 
 #pragma comment(lib, "comctl32.lib")
 #pragma comment(linker, "\"/manifestdependency:type='win32' \
@@ -53,6 +54,8 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR, _
     }
 
     g_hInst = hInstance;
+
+    winrt::init_apartment(winrt::apartment_type::multi_threaded);
 
     // Init common controls
     INITCOMMONCONTROLSEX icc{ sizeof(icc), ICC_STANDARD_CLASSES };
